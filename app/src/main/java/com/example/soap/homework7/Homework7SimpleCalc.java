@@ -45,11 +45,15 @@ public class Homework7SimpleCalc extends AppCompatActivity {
                     case R.id.btn_Minus :
                         calc_result = num1 - num2;
                         break;
+                    case R.id.btn_Multiply :
+                        calc_result = num1 * num2;
+                        break;
                 }
                 txtview_result.setText("Result : " + String.valueOf(calc_result));
             }
         };
         btn_plus.setOnClickListener(ClickListen);
         btn_minus.setOnClickListener(ClickListen);
+        btn_multiply.setOnClickListener(ClickListen);
     }
 }
