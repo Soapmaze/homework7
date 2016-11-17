@@ -15,7 +15,9 @@ public class Homework7SimpleCalc extends AppCompatActivity {
     Button btn_multiply;
     Button btn_divide;
     TextView txtview_result;
+    int num1 =0, num2 = 0;
     int calc_result=0;
+    View.OnClickListener ClickListen;
 
     @Override
     protected void onCreate(Bundle savedInstanceState) {
@@ -30,12 +32,24 @@ public class Homework7SimpleCalc extends AppCompatActivity {
         btn_divide = (Button) findViewById(R.id.btn_Divide);
         txtview_result = (TextView) findViewById(R.id.txtView_Result);
 
-        btn_plus.setOnClickListener(new View.OnClickListener() {
+        ClickListen = new View.OnClickListener() {
             @Override
-            public void onClick(View view) {
-                calc_result = Integer.parseInt(input_num1.getText().toString()) + Integer.parseInt(input_num2.getText().toString());
+            public void onClick(View v) {
+                num1 = Integer.parseInt(input_num1.getText().toString());
+                num2 = Integer.parseInt(input_num2.getText().toString());
+
+                switch (v.getId()) {
+                    case R.id.btn_Plus :
+                        calc_result = num1 + num2;
+                        break;
+                    case R.id.btn_Minus :
+                        calc_result = num1 - num2;
+                        break;
+                }
                 txtview_result.setText("Result : " + String.valueOf(calc_result));
             }
-        });
+        };
+        btn_plus.setOnClickListener(ClickListen);
+        btn_minus.setOnClickListener(ClickListen);
     }
 }
