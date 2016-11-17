@@ -48,6 +48,9 @@ public class Homework7SimpleCalc extends AppCompatActivity {
                     case R.id.btn_Multiply :
                         calc_result = num1 * num2;
                         break;
+                    case R.id.btn_Divide :
+                        calc_result = num1 / num2;
+                        break;
                 }
                 txtview_result.setText("Result : " + String.valueOf(calc_result));
             }
@@ -55,5 +58,6 @@ public class Homework7SimpleCalc extends AppCompatActivity {
         btn_plus.setOnClickListener(ClickListen);
         btn_minus.setOnClickListener(ClickListen);
         btn_multiply.setOnClickListener(ClickListen);
+        btn_divide.setOnClickListener(ClickListen);
     }
 }
